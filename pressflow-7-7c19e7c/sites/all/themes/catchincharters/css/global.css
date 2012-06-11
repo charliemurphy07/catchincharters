@@ -1,0 +1,16 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+
+html, footer {
+  background-color: #101010;
+}
+body {
+  background-color: #262626;	
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  color: #888888;
+}
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff;
+  font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  letter-spacing: inherit;
+}
