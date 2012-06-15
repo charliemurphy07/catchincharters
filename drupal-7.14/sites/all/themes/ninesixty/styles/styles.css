@@ -1,0 +1,94 @@
+/* $Id: styles.css,v 1.1.2.2.2.1 2011/01/11 01:08:49 dvessel Exp $ */
+html {
+	background: url('../images/shadow.png') repeat-y scroll 405px 10px #131518;
+}
+body {
+	background-color: #323335;
+	color: #a1a4a6;
+	height: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  	color: #fdfdfd;
+  	font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  	letter-spacing: inherit;
+}
+
+a, a:link, a:visited, a:active {
+    color: #307e94;
+    text-decoration: none;
+}
+
+h1#site-name {
+  margin-bottom: 0;
+}
+
+#site-subheader,
+#footer-region,
+.column,
+.node,
+.comment,
+.block {
+  margin-bottom: 1.5em;
+}
+
+.container-12, .container-16 {
+	margin: 0;
+	width: 1200px;
+}
+
+.container-12 .grid-8, #block-block-1 {
+	width: 860px;	
+}
+
+#page {
+	padding-left: 156px;
+}
+
+#main {
+	margin-bottom: 0;
+	padding-left: 50px;
+	padding-top: 20px;
+}
+
+#site-subheader {
+	float: left;
+	padding-top: 20px;	
+	margin-left: 0;
+}
+
+#branding {
+	padding-top: 20px;
+}
+
+ul.menu li {
+	list-style: none outside none;
+	list-style-type: none;
+	margin-left: 0;
+}
+
+ul.menu li a {
+	color: #307e94;
+} 
+
+#block-block-1 {
+	float: left;
+	margin-left: 50px;
+}
+
+#block-block-3 {
+	float: left;	
+	margin-left: 10px;
+	width: 220px;
+}
+
+.shadow {
+	background: url('../images/shadow.png') repeat-y scroll 0px 10px transparent;
+}
+
+#footer {
+	background: url('../images/shadow.png') repeat-y scroll 405px 10px #131518;
+	height: 100%;
+	padding-left: 165px;
+	padding-top: 20px;
+}

@@ -1,0 +1,89 @@
+/* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. *//* This file will hold styles for the mobile version of your website (mobile first). */
+/* This also can include ANY global CSS that applies site-wide. Unless overwritten by a more specific style rule, CSS declarations in global.css will apply site-wide. */
+
+
+body {
+  	color: #a1a4a6;
+  	font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+}
+
+
+#section-content {
+	background-color: #323335;	
+}
+
+h1, h2, h3, h4, h5, h6 {
+  	color: #fdfdfd;
+  	font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  	letter-spacing: inherit;
+}
+
+
+#region-branding,
+#zone-preface-wrapper,
+.region-sidebar-first {
+	background: url('images/shadow.png') repeat-y scroll 270px 10px transparent;
+}
+
+.container-12, .container-16 {
+	margin-left: inherit;
+	margin-right: inherit;
+}
+
+.container-12 .grid-3 {
+	width: 210px;
+}
+
+.site-name-slogan{
+	float: left;
+	padding-top: 10px;
+}
+
+#region-branding {
+	background: url('images/shadow.png') repeat-y scroll 200px 10px transparent;
+	padding-top: 20px;
+}
+
+#zone-preface-wrapper, #zone-menu-wrapper, #zone-header-wrapper, #zone-postscript-wrapper, #region-sidebar-second, #breadcrumb{
+	display: none;
+}
+
+.shadow {
+	background: url('images/shadow.png') repeat-y;
+}
+
+.region-content {
+	padding-left: 20px;
+}
+
+#block-system-navigation {
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+#block-system-navigation ul li.leaf {
+	list-style: none outside none;
+	list-style-type: none;
+	margin-left: 0;
+}
+
+#block-system-navigation .menu li a {
+	color: #307e94;
+} 
+
+#zone-footer-wrapper, #zone-footer {
+	padding-top: 13px;
+	height: 100%;
+}
+
+#region-footer-second {
+	height: 100%;
+	padding-left: 20px;
+}
+
+#section-footer {
+	background-color: #131518;
+	height: 100%;
+	width: 100%;
+}
