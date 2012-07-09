@@ -11,6 +11,9 @@ stylesheets[all][] = styles/framework/reset.css
 stylesheets[all][] = styles/framework/text.css
 stylesheets[all][] = styles/framework/960.css
 stylesheets[all][] = styles/framework/debug.css
+stylesheets[all][] = styles/slides.css
+scripts[] = js/Slides/source/slides.jquery.js
+scripts[] = js/slides.js
 
 ; Theme specific styles. Any sub-themes should override this.
 stylesheets[all][] = styles/styles.css
@@ -20,7 +23,11 @@ regions[header]         = Header
 regions[search_box]     = Search Box
 regions[highlighted]    = Highlight
 regions[help]           = Help
+regions[content_top]	= Content Top
+regions[content_top_left]	= Content Top Left
+regions[content_top_right]	= Content Top Right
 regions[content]        = Content
+regions[content_bottom]	= Content Bottom
 regions[sidebar_first]  = Left sidebar
 regions[sidebar_second] = Right sidebar
 regions[footer]         = Footer

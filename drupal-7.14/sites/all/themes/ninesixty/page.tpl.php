@@ -57,11 +57,18 @@
     <?php endif; ?>
     <?php print $messages; ?>
     <?php print render($page['help']); ?>
-
+    
+    <div id="content-top" class="region clearfix">
+    	<?php print render($page['content_top']); ?>
+    </div>
+    
     <div id="main-content" class="region clearfix">
       <?php print render($page['content']); ?>
     </div>
-
+    
+    <div id="content-bottom" class="region clearfix">
+    	<?php print render($page['content_bottom']); ?>
+    </div>
     <?php print $feed_icons; ?>
   </div>
 

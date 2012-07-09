@@ -11,6 +11,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   	color: #fdfdfd;
   	font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+  	font-size: 18px;
   	letter-spacing: inherit;
 }
 
@@ -61,6 +62,10 @@ h1#site-name {
 	padding-top: 20px;
 }
 
+#site-slogan {
+	padding-top: 3px;
+}
+
 ul.menu li {
 	list-style: none outside none;
 	list-style-type: none;
@@ -69,6 +74,14 @@ ul.menu li {
 
 ul.menu li a {
 	color: #307e94;
+} 
+
+ul.menu li a.active {
+	color: #fe0002;
+} 
+
+ul.menu li a:hover {
+	color: #fe0002;
 } 
 
 #block-block-1 {
@@ -82,10 +95,93 @@ ul.menu li a {
 	width: 220px;
 }
 
+#sidebar-left {
+	width: 220px
+}
+
+#content-top {
+	background: url('../images/separator.png') no-repeat 0px 478px transparent;
+	padding-bottom: 15px;
+	width: 856px;
+}
+
+#content-top-left {
+	float: left;
+	margin-top: 10px;
+	width: 40%;
+}
+
+#content-top-right {
+	float: left;
+	margin-top: 10px;
+	width: 60%;
+}
+
+#content-bottom {
+	clear: both;
+	width: 860px;
+}
+
+#block-views-photo-galleries-block h2 {
+	background: none;
+}
+
+#block-views-photo-galleries-block .views-field.views-field-title {
+	text-align: center;
+}
+
+#block-views-photo-galleries-block .views-field-field-teaser-image img{
+	border: 3px solid black;
+}
+
+#block-views-photo-galleries-block  .col-1,
+#block-views-photo-galleries-block  .col-2, 
+#block-views-photo-galleries-block  .col-3 {
+	padding-right: 90px;
+}
+
+#block-homepage-rotator-homepage-rotator h2 {
+	background: url('../images/separator.png') no-repeat 117px 13px transparent;
+	width: 855px;
+}
+
+#block-views-photo-galleries-block h2 {
+    background: url('../images/separator.png') no-repeat 141px 12px transparent;
+	width: 852px;
+}
+
+#block-views-recent-post-block-1 h2 {
+	background: url('../images/separator.png') no-repeat 114px 12px transparent;
+}
+
+#block-block-1 h2 {
+	background: url('../images/bottom.jpg') no-repeat 211px 12px transparent;
+}
+
+#block-views-calendar-block-2 ul li {
+	list-style: none outside none;	
+	margin-bottom: 20px;
+	margin-left: 0;
+}
+
+#block-views-calendar-block-2 ul li div {
+	margin-bottom: 2px;
+}
+
+#block-views-calendar-block-2 ul li .views-field-field-fishing-time .views-label-field-fishing-time,
+#block-views-calendar-block-2 ul li .views-field-field-fishing-type .views-label-field-fishing-type {
+	display: block;
+	float: left;
+	margin-right: 5px;
+}
+
 .shadow {
 	background: url('../images/shadow.png') repeat-y scroll 0px 10px transparent;
 }
 
+.not-front #main {
+	min-height: 480px;
+}
 #footer {
 	background: url('../images/shadow.png') repeat-y scroll 405px 10px #131518;
 	height: 100%;
