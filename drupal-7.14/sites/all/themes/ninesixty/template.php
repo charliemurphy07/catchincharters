@@ -17,7 +17,6 @@ function ninesixty_preprocess_html(&$vars) {
  * Preprocessor for page.tpl.php template file.
  */
 function ninesixty_preprocess_page(&$vars, $hook) {
-
   // For easy printing of variables.
   $vars['logo_img'] = '';
   if (!empty($vars['logo'])) {
@@ -81,6 +80,81 @@ function ninesixty_preprocess_page(&$vars, $hook) {
 
 }
 
+/**
+ * Implements hook_preprocess_node
+ */
+function ninesixty_preprocess_node(&$vars) {
+	// We need to check quantity for all product types
+	if($vars['node']->type == 'product'){
+		// We will first check base stock levels.
+		$stock = uc_stock_level($vars['node']->model);
+		if($stock < 0){
+			// hide add to cart button show sold out.
+			$vars['content']['add_to_cart']['#form']['actions']['submit']['#value'] = 'SOLD OUT';
+			$vars['content']['add_to_cart']['#form']['actions']['submit']['#attributes']['class'][] = 'disable';
+			// We add some inline js, I know, I know inline js... However it provides us a diabled submit button.
+			drupal_add_js('jQuery(document).ready(function(){
+				jQuery(".node-add-to-cart.disable").attr("disabled","disabled");
+			});', 'inline');
+		}		
+	}
+}
+
+function ninesixty_form_alter(&$form, &$form_state, $form_id){ 
+	if(preg_match('/^uc_product_add_to_cart_form/', $form_id)){
+		$form['#submit'][] = 'ninesixty_stock_check';
+	}
+	if($form_id == 'uc_cart_view_form') {
+		$cid = uc_cart_get_id(FALSE);
+		$efq = new EntityFieldQuery();
+		$result = $efq->entityCondition('entity_type', 'uc_cart_item')
+        	->propertyCondition('cart_id', $cid)
+        	->propertyOrderBy('cart_item_id', 'ASC')
+        	->execute();
+        if (!empty($result['uc_cart_item'])) {
+        	$items[$cid] = entity_load('uc_cart_item', array_keys($result['uc_cart_item']), NULL, TRUE);
+
+        	foreach ($items[$cid] as $item) {
+	          $stock = uc_stock_level($item->model);
+	          if($item->qty > $stock){
+	          	  $message = 'We are sorry but we only have '. $stock .' spot(s) available for '. $item->title .' trip. Please adjust quantity.';
+		          drupal_set_message($message, 'error');
+		          // We add some inline js, I know, I know inline js... However it provides us a diabled submit button.
+		          drupal_add_js('jQuery(document).ready(function(){
+					jQuery("#edit-checkout--2").attr("disabled","disabled");
+				  });', 'inline');
+				  return FALSE;
+	          }
+	          else {
+		          drupal_get_messages('error');
+	          }
+	        }
+	    }
+	}
+}
+
+/**
+ * We use this function to check stock. If we do not have enough stock aviable we show an error message to the user.
+ */
+function ninesixty_stock_check(){
+	$cid = uc_cart_get_id(FALSE);
+	$efq = new EntityFieldQuery();
+    $result = $efq->entityCondition('entity_type', 'uc_cart_item')
+        ->propertyCondition('cart_id', $cid)
+        ->propertyOrderBy('cart_item_id', 'ASC')
+        ->execute();
+    if (!empty($result['uc_cart_item'])) {
+        $items[$cid] = entity_load('uc_cart_item', array_keys($result['uc_cart_item']), NULL, TRUE);
+
+        foreach ($items[$cid] as $item) {
+          $stock = uc_stock_level($item->model);
+          if($item->qty > $stock){
+          	  $message = 'We are sorry but we only have '. $stock .' spot(s) aviable for '. $item->title .' trip. Please adjust quanity.';
+	          drupal_set_message($message, 'error');
+          }
+        }
+     }
+}
 /**
  * Contextually adds 960 Grid System classes.
  *

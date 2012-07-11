@@ -57,7 +57,7 @@ function homepage_rotator_contents() {
 	$content = '<div id="slides"><div class="slides_container">';
 	foreach($result as $nid){
 		$node = node_load($nid->nid);
-		foreach ($node->field_image['und'] as $image){
+		foreach ($node->field_images['und'] as $image){
 			//$path = drupal_realpath($image['uri'])
 			$path = image_style_url('homepage_rotator', $image['uri']);
 			$content .= '<img src='. $path .'/>';	

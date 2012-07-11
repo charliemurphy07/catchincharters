@@ -10,7 +10,6 @@ engine = phptemplate
 stylesheets[all][] = styles/framework/reset.css
 stylesheets[all][] = styles/framework/text.css
 stylesheets[all][] = styles/framework/960.css
-stylesheets[all][] = styles/framework/debug.css
 stylesheets[all][] = styles/slides.css
 scripts[] = js/Slides/source/slides.jquery.js
 scripts[] = js/slides.js

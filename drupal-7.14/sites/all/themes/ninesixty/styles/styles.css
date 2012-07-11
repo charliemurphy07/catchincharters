@@ -39,6 +39,7 @@ h1#site-name {
 }
 
 .container-12 .grid-8, #block-block-1 {
+	overflow: hidden;
 	width: 860px;	
 }
 
@@ -55,7 +56,7 @@ h1#site-name {
 #site-subheader {
 	float: left;
 	padding-top: 20px;	
-	margin-left: 0;
+	margin-left: 1px;
 }
 
 #branding {
@@ -85,8 +86,7 @@ ul.menu li a:hover {
 } 
 
 #block-block-1 {
-	float: left;
-	margin-left: 50px;
+	padding-left: 50px;
 }
 
 #block-block-3 {
@@ -187,4 +187,18 @@ ul.menu li a:hover {
 	height: 100%;
 	padding-left: 165px;
 	padding-top: 20px;
+}
+
+/* Maintenance Styles */
+
+.maintenance-page #header #logo-title {
+	padding-top: 20px;
+}
+
+.maintenance-page #main {
+	padding-left: 0;
+}
+
+.maintenance-page #footer {
+	background: none;
 }
